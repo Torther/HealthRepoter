@@ -22,4 +22,4 @@ jobs:
         pip install requests
     - name: 填报
       run: |
-        py test.py
+        python test.py
