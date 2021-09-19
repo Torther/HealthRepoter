@@ -17,3 +17,5 @@ print(loginPwd[0])
 print(householdRegister[0])
 print(phoneNumber[0])
 print(currentLocation[0])
+
+print("结束")
