@@ -24,4 +24,4 @@ jobs:
         pip install requests
     - name: 填报
       run: |
-        python test.py
+        python test.py ${{secrets.LOGIN_ID}} ${{secrets.LOGIN_PWD}} ${{secrets.LOGIN_PWD}} ${{secrets.HOUSEHOLD_REGISTER}} ${{secrets.PHONE_NUMBER}} ${{secrets.CURRENT_LOCATION}}
