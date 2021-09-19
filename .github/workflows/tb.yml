@@ -1,0 +1,25 @@
+name: 填报
+
+on:
+  push:
+    branches: [ main ]
+
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+    - name: 安装Python下的requests
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests
+    - name: 填报
+      run: |
+        py test.py
