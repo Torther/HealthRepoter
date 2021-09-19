@@ -24,6 +24,10 @@ jobs:
         pip install requests
     - name: 填报
       env:
-        SCKEY: ${{ secrets.LOGIN_ID }} ${{secrets.LOGIN_PWD}} ${{secrets.LOGIN_PWD}} ${{secrets.HOUSEHOLD_REGISTER}} ${{secrets.PHONE_NUMBER}} ${{secrets.CURRENT_LOCATION}}
+        LOGIN_ID: ${{ secrets.LOGIN_ID }}
+        LOGIN_PWD: ${{secrets.LOGIN_PWD}}
+        HOUSEHOLD_REGISTER: ${{secrets.HOUSEHOLD_REGISTER}}
+        PHONE_NUMBER: ${{secrets.PHONE_NUMBER}}
+        CURRENT_LOCATION: ${{secrets.CURRENT_LOCATION}}
       run: |
         python test.py
