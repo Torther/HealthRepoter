@@ -18,4 +18,7 @@ print(householdRegister[0])
 print(phoneNumber[0])
 print(currentLocation[0])
 
+r = requests.get("http://www.wzpt.edu.cn/")
+print(r.text)
+
 print("结束")
