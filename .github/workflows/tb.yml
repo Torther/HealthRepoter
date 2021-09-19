@@ -23,5 +23,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install requests
     - name: 填报
+      env:
+        SCKEY: ${{ secrets.LOGIN_ID }} ${{secrets.LOGIN_PWD}} ${{secrets.LOGIN_PWD}} ${{secrets.HOUSEHOLD_REGISTER}} ${{secrets.PHONE_NUMBER}} ${{secrets.CURRENT_LOCATION}}
       run: |
-        python test.py ${{secrets.LOGIN_ID}} ${{secrets.LOGIN_PWD}} ${{secrets.LOGIN_PWD}} ${{secrets.HOUSEHOLD_REGISTER}} ${{secrets.PHONE_NUMBER}} ${{secrets.CURRENT_LOCATION}}
+        python test.py
