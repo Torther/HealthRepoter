@@ -24,7 +24,10 @@ jobs:
         pip install requests
     - name: 填报
       env:
-        LOGIN_ID: ${{ secrets.LOGIN_ID }}
+        LOGIN_ID: ${{secrets.LOGIN_ID}}
         LOGIN_PWD: ${{secrets.LOGIN_PWD}}
+        HOUSEHOLD_REGISTER: ${{HOUSEHOLD_REGISTER}}
+        PHONE_NUMBER: ${{PHONE_NUMBER}}
+        CURRENT_LOCATION: ${{CURRENT_LOCATION}}
       run: |
-        python test.py ${{secrets.LOGIN_ID}} ${{secrets.LOGIN_PWD}}
+        python tb.py
