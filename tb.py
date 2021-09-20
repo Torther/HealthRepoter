@@ -72,10 +72,7 @@ class TB:
                'ab': self.school,
                'ac': 0,
                'ac1': '',
-               'ac2': '',
-               'a91': '',
-               'a92': '',
-               'a93': ''}
+               'ac2': ''}
         resp = self.__httpClient.post(url=url, data=req)
         return resp.status_code == 200 and (resp.text.find('填报成功！') or resp.text.find('已经申报成功，请勿重复提交！'))
 
