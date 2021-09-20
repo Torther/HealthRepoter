@@ -1,12 +1,13 @@
 # 温职自动签到
-Fork->Settings->Secrets
 
-添加以下字段
-- LOGIN_ID
-- LOGIN_PWD
-- HOUSEHOLD_REGISTER
-- PHONE_NUMBER
-- CURRENT_LOCATION
+1. Fork->Settings->Secrets
+    - 添加以下字段
+        - LOGIN_ID
+        - LOGIN_PWD
+        - HOUSEHOLD_REGISTER
+        - PHONE_NUMBER
+        - CURRENT_LOCATION
+1. 启用Actions
 
 | 字段 | 说明 |
 | ---- | ---- |
