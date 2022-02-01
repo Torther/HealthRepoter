@@ -82,5 +82,3 @@ if (tb.login() and tb.put()):
     print("填报成功")
 else:
     print("填报失败")
-
-
