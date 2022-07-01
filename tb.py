@@ -12,7 +12,7 @@ phoneNumber = os.environ["PHONE_NUMBER"]
 # 当前位置
 currentLocation = os.environ["CURRENT_LOCATION"]
 # 是否在校:0不在,1在
-isSchool = 0
+isSchool = 1
 
 class TB:
     def __init__(self, id, pwd, home, phone, city='浙江省温州市瓯海区', school=1):
