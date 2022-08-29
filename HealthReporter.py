@@ -1,4 +1,6 @@
-import os,random,requests
+import os
+import random
+import requests
 from typing import Tuple
 
 ##########
@@ -10,11 +12,17 @@ phone_number = os.environ["PHONE_NUMBER"]                   # 联系电话
 current_location = os.environ["CURRENT_LOCATION"]           # 当前所在地
 serverChan_key = os.environ["SERVERCHAN_KEY"]               # Server 酱 Key
 at_school = 0                                               # 0：不在  1：在
-send_message = 1                                            # 1：发送  0：不发送
+send_message = True                                         # 1：发送(默认)  0：不发送
+
+try:
+    serverChan_key = os.environ["SERVERCHAN_KEY"]           # Server 酱 Key
+except:
+    send_message = False                                    # 若未配置 Key ，则不发送信息
 
 ##########
 
 # 健康填报模块
+
 
 class HealthReport:
     def __init__(self, login_account, login_password, household_register, phone_number, current_location, at_school):
@@ -79,11 +87,12 @@ class HealthReport:
 
 # 信息发送模块
 
+
 class MessageSend:
     def __init__(self, serverChan_key):
         self.__httpClient = requests.Session()
         self.serverChan_key = serverChan_key
-        self.send_message = int2bool(send_message)
+        self.send_message = send_message
 
     def send(self, title, message):
         if self.send_message:
@@ -92,19 +101,14 @@ class MessageSend:
             messageSendResponse = requests.post(url=url, data=data)
             return messageSendResponse.status_code
 
+
 def warp(string: list) -> str:
     return "\n".join(string)
 
-def int2bool(v: int) -> bool:
-    if isinstance(v, bool):
-        return v
-    elif v == 1:
-        return True
-    elif v == 0:
-        return False
 
 def daily_random_number():
     return str(random.randint(10, 30))
+
 
 health_reporter = HealthReport(login_account=login_account, login_password=login_password,
                                household_register=household_register, phone_number=phone_number,
@@ -135,7 +139,8 @@ if login_status == 200 and login_return_text.__contains__(login_account):
                 f"{report_status}",
                 f"{report_return_text}"
             ]))
-            message.send(f"出现错误, HTTP 状态码: {report_status}", report_return_text)
+            message.send(
+                f"出现错误, HTTP 状态码: {report_status}", report_return_text)
 
 else:
     print(warp([
