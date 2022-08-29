@@ -1,4 +1,4 @@
-name: 填报
+name: 健康填报
 
 on:
   push:
@@ -19,16 +19,22 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: 3.9
-    - name: 安装Python下的requests
+    - name: 安装 requests
       run: |
         python -m pip install --upgrade pip
         pip install requests
     - name: 填报
       env:
-        LOGIN_ID: ${{secrets.LOGIN_ID}}
-        LOGIN_PWD: ${{secrets.LOGIN_PWD}}
+        LOGIN_ACCOUNT: ${{secrets.LOGIN_ACCOUNT}}
+        LOGIN_PASSWORD: ${{secrets.LOGIN_PASSWORD}}
         HOUSEHOLD_REGISTER: ${{secrets.HOUSEHOLD_REGISTER}}
         PHONE_NUMBER: ${{secrets.PHONE_NUMBER}}
         CURRENT_LOCATION: ${{secrets.CURRENT_LOCATION}}
+        SERVERCHAN_KEY: ${{secrets.SERVERCHAN_KEY}}
       run: |
-        python tb.py
+        python HealthReporter.py
+    - name: Egg
+      run: |
+      apt update && apt upgrade
+      apt install neofetch -y
+      neofetch

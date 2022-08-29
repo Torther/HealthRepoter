@@ -7,6 +7,7 @@
         - HOUSEHOLD_REGISTER
         - PHONE_NUMBER
         - CURRENT_LOCATION
+        - SERVERCHAN_KEY
 1. 启用Actions
 
 | 字段 | 说明 |
@@ -16,5 +17,6 @@
 | HOUSEHOLD_REGISTER | 户口所在地 |
 | PHONE_NUMBER | 联系电话 |
 | CURRENT_LOCATION | 现所在地 |
+| SERVERCHAN_KEY | Server酱Key |
 
 PS:打卡调用的是学校公开的API https://info2.webvpn.wzvtc.cn/supply/index.jsp
