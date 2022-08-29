@@ -3,14 +3,10 @@
 ## 使用方法
 
 - Fork 本仓库
+  
 - 打开 Fork 的仓库的 `Settings` -> `Secrets` -> `Actions`
-    - 添加以下字段，并填相应的值
-        - LOGIN_ACCOUNT
-        - LOGIN_PASSWORD
-        - HOUSEHOLD_REGISTER
-        - PHONE_NUMBER
-        - CURRENT_LOCATION
-        - SERVERCHAN_KEY
+  
+- 添加以下字段，并填相应的值
 
 | 字段 | 说明 | 属性 |
 | ---- |-------------| ---- |

@@ -3,10 +3,9 @@ name: 健康填报
 on:
   push:
   schedule:
-# 每天在国际标准时间22点（北京时间+8，即早上6点）运行
-    - cron: '0 16,0 * * *'
-
-
+    # 此处 cron 指定的是格林尼治时间（UTC），如果需要换算成北京时间，要在该 cron 的基础上增加八小时得到北京时间（UTC+8）。
+    # 第一个数字代表分钟，第二个数字代表小时，第三个数字代表日，第四个数字代表月，第五个数字代表星期。
+    - cron: '0 0 * * *' # 默认每天北京时间早上 8 点运行，即'0 0 * * *'
 
 jobs:
   report:
@@ -17,11 +16,11 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: 3.9
-    - name: 安装 requests
+    - name: Install requests
       run: |
         python -m pip install --upgrade pip
         pip install requests
-    - name: 填报
+    - name: Set up Environment Variable and run HealthReporter
       env:
         LOGIN_ACCOUNT: ${{secrets.LOGIN_ACCOUNT}}
         LOGIN_PASSWORD: ${{secrets.LOGIN_PASSWORD}}
