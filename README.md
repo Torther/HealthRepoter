@@ -2,18 +2,19 @@
 
 1. Fork->Settings->Secrets
     - 添加以下字段
-        - LOGIN_ID
-        - LOGIN_PWD
+        - LOGIN_ACCOUNT
+        - LOGIN_PASSWORD
         - HOUSEHOLD_REGISTER
         - PHONE_NUMBER
         - CURRENT_LOCATION
         - SERVERCHAN_KEY
-1. 启用Actions
+
+2. 启用Actions
 
 | 字段 | 说明 |
 | ---- | ---- |
-| LOGIN_ID | 学号 |
-| LOGIN_PWD | 密码 |
+| LOGIN_ACCOUNT | 学号 |
+| LOGIN_PASSWORD | 密码 |
 | HOUSEHOLD_REGISTER | 户口所在地 |
 | PHONE_NUMBER | 联系电话 |
 | CURRENT_LOCATION | 现所在地 |
