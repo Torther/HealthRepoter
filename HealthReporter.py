@@ -92,7 +92,7 @@ class MessageSend:
         self.serverChan_key = serverChan_key
         self.send_message = send_message
 
-    def send(self, title, message):
+    def send(self, title, message=""):
         if self.send_message:
             url = f"https://sctapi.ftqq.com/{serverChan_key}.send"
             data = {'title': title, 'desp': message}
