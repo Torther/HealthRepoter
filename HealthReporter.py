@@ -23,7 +23,6 @@ except:
 
 # 健康填报模块
 
-
 class HealthReport:
     def __init__(self, login_account, login_password, household_register, phone_number, current_location, at_school):
         self.__httpClient = requests.Session()
@@ -86,7 +85,6 @@ class HealthReport:
         return reportResponse.status_code, reportResponse.text
 
 # 信息发送模块
-
 
 class MessageSend:
     def __init__(self, serverChan_key):
