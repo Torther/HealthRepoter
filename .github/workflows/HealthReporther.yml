@@ -33,8 +33,3 @@ jobs:
         SERVERCHAN_KEY: ${{secrets.SERVERCHAN_KEY}}
       run: |
         python HealthReporter.py
-    - name: Egg
-      run: |
-      apt update && apt upgrade
-      apt install neofetch -y
-      neofetch
