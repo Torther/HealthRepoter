@@ -9,10 +9,8 @@ on:
 
 
 jobs:
-  build:
-
+  report:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python 3.9
@@ -32,4 +30,4 @@ jobs:
         CURRENT_LOCATION: ${{secrets.CURRENT_LOCATION}}
         SERVERCHAN_KEY: ${{secrets.SERVERCHAN_KEY}}
       run: |
-        python HealthReporter.py
+        python3 HealthReporter.py
