@@ -23,6 +23,7 @@ except:
 
 # 健康填报模块
 
+
 class HealthReport:
     def __init__(self, login_account, login_password, household_register, phone_number, current_location, at_school):
         self.__httpClient = requests.Session()
@@ -73,18 +74,17 @@ class HealthReport:
             'a92': '',
             'a93': '',
             'a94': 0,
-            'aa': 0
+            'aa': 0,
+            'ab': self.at_school,
+            'ac': 0,
+            'ac1': '',
+            'ac2': ''
         }
-        # 于 2022/8/30 提交中未发现如下参数
-        # 'ab': self.at_school,
-        # 'ac': 0,
-        # 'ac1': '',
-        # 'ac2': ''
-        # }
         reportResponse = self.__httpClient.post(url=URL, data=reportData)
         return reportResponse.status_code, reportResponse.text
 
 # 信息发送模块
+
 
 class MessageSend:
     def __init__(self, serverChan_key):
